@@ -51,6 +51,14 @@
   font-family: var(--font-grotesk);
 }
 
+@utility h2-bold {
+  @apply text-[24px] font-bold leading-[31.2px];
+}
+
+@utility invert-colors {
+  @apply invert dark:invert-0;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
