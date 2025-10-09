@@ -55,6 +55,10 @@
   @apply text-[24px] font-bold leading-[31.2px];
 }
 
+@utility h3-semibold {
+  @apply text-[20px] font-semibold leading-[24.8px];
+}
+
 @utility invert-colors {
   @apply invert dark:invert-0;
 }
