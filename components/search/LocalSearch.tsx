@@ -60,7 +60,7 @@ const LocalSearch = ({ route, imgSrc, placeholder, otherClasses }: Props) => {
         onChange={(e) => {
           setSearchQuery(e.target.value);
         }}
-        className="text-[16px] font-normal leading-[22.4px] no-focus border-none shadow-none outline-none "
+        className="text-[16px] font-normal leading-[22.4px] focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 border-none shadow-none outline-none "
       />
     </div>
   );
