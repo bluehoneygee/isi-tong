@@ -35,17 +35,9 @@ const handleError = (error: unknown, responseType: ResponseType = "server") => {
   }
 
   if (error instanceof ZodError) {
-    const fieldErrors: Record<string, string[]> = {};
-
-    error.issues.forEach((issue) => {
-      const path = issue.path.join(".");
-      if (!fieldErrors[path]) {
-        fieldErrors[path] = [];
-      }
-      fieldErrors[path].push(issue.message);
-    });
-
-    const validationError = new ValidationError(fieldErrors);
+    const validationError = new ValidationError(
+      error.flatten().fieldErrors as Record<string, string[]>
+    );
 
     return formatResponse(
       responseType,
